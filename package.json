@@ -1,52 +1,52 @@
 {
-  "name": "chair-support",
+  "name": "chairsupport",
+  "productName": "chairsupport",
   "version": "1.0.0",
-  "description": "Model European Union ChairSupport",
-  "main": "main.js",
+  "description": "My Electron application description",
+  "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "CKroes97",
-  "license": "GNU",
+  "author": {
+    "name": "CasperK97",
+    "email": "casper.kroes@hetnet.nl"
+  },
+  "license": "MIT",
+  "config": {
+    "config": {
+      "forge": "./forge.config.js"
+    }
+  },
   "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "electron": "^12.0.2"
+    "@electron-forge/plugin-webpack": "6.0.0-beta.54",
+    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^4.2.1",
+    "electron": "12.0.2",
+    "file-loader": "^6.2.0",
+    "node-loader": "^1.0.1",
+    "postcss": "^8.2.10",
+    "sass": "^1.32.8",
+    "sass-loader": "10.1.1",
+    "style-loader": "^1.2.1"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "chair_support"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0-beta3",
+    "electron-squirrel-startup": "^1.0.0",
+    "postcss-loader": "4.2.0"
   }
 }

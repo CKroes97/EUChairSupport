@@ -12,10 +12,11 @@ html{
         font-weight: bold;
         padding-left: auto;
         padding-right: auto;
+        .navbar-item{
+            padding-left: 1rem;
+            padding-right: 1rem;    
+        }
     }
  
-.navbar-item{
-    padding-left: 1rem;
-    padding-right: 1rem;   
-}
+
 
