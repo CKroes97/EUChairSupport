@@ -1346,8 +1346,8 @@ var createWindow = function createWindow() {
     webPreferences: {
       preload: undefined
     },
-    width: 800,
-    height: 600
+    width: 1350,
+    height: 800
   }); // and load the index.html of the app.
 
   mainWindow.loadURL('http://localhost:3000/main_window'); // Open the DevTools.

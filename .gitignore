@@ -63,6 +63,9 @@ typings/
 # SASS cache
 .sass-cache/
 
+# Webpack
+.webpack/
+
 # Optional REPL history
 .node_repl_history
 
