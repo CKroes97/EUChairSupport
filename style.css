@@ -1,0 +1,21 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+
+html{
+    background-color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.navbar{
+        font-size: 2rem;
+        font-weight: bold;
+        padding-left: auto;
+        padding-right: auto;
+    }
+ 
+.navbar-item{
+    padding-left: 1rem;
+    padding-right: 1rem;   
+}
+
