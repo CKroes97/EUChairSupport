@@ -1,8 +1,8 @@
 .base-timer {
+  display: inline-block;
   position: relative;  
   width: 100%;
-    vertical-align: middle;
-    text-align: center;
+  text-align: center;
     .base-timer__label {
       position: absolute;
       top: 50%;
@@ -12,15 +12,15 @@
     }
   }
   
-  .base-timer__svg {
-    vertical-align: middle;
-    text-align: center;
-    transform: scaleX(-1);
+  svg {
+    display: inline-block;
+    max-height: 50vh;
   }
   
   .base-timer__circle {
     fill: none;
     stroke: none;
+    max-height: 100%;
   }
   
   .base-timer__path-elapsed {
@@ -33,7 +33,6 @@
     stroke-linecap: round;
     transform: rotate(90deg);
     transform-origin: center;
-    transition: 1s linear all;
     fill-rule: nonzero;
     stroke: currentColor;
   }

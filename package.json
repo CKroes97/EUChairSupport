@@ -1,8 +1,8 @@
 {
   "name": "chairsupport",
-  "productName": "chairsupport",
+  "productName": "ChairSupport",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Chairing support application for Model European Union simulations",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -38,6 +38,8 @@
     "electron": "12.0.2",
     "file-loader": "^6.2.0",
     "node-loader": "^1.0.1",
+    "postcss": "^8.2.10",
+    "postcss-loader": "4.2.0",
     "sass": "^1.32.8",
     "sass-loader": "10.1.1",
     "style-loader": "^1.2.1"
@@ -46,7 +48,6 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@popperjs/core": "^2.9.2",
     "electron-squirrel-startup": "^1.0.0",
-    "jquery": "^3.6.0",
-    "postcss-loader": "4.2.0"
+    "jquery": "^3.6.0"
   }
 }

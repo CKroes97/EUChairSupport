@@ -20,8 +20,14 @@ body{
         }
     }
 
-.column{
-    height: 35vh;
+.columns{
+    flex: 1 1 auto;
+    position: relative;
+    height: 50vh; 
+    .column{
+        position: relative;
+        height: auto;
+    }
 }
  
 

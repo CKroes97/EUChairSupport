@@ -19,6 +19,15 @@ let remainingPathColor = COLOR_CODES.info.color;
 
 
 startTimer();
+setTimeout(function(){
+  setTransition();
+},10);
+
+
+function setTransition(){
+  document.getElementById("base-timer-path-remaining")
+  .setAttribute("style", "transition: 1s linear all" )
+}
 
 function onTimesUp() {
   clearInterval(timerInterval);
