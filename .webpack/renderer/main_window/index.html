@@ -56,19 +56,19 @@
             ></path>
           </g>
         </svg>
-        <span id="base-timer-label" class="base-timer__label">${formatTime(
+        <div id="base-timer-label" class="base-timer__label">${formatTime(
           timeLeft
-        )}</span>
+        )}</div>
       </div>
     </div>
     <div class="column is-one-third">
       Timer two <br />
-      <div class="base-timer">
-        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <g class="base-timer__circle">
-            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <div class="base-timer" id="base-timer2">
+        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="base-timer2__svg">
+          <g class="base-timer__circle" id="base-timer2__circle">
+            <circle class="base-timer__path-elapsed" id="base-timer2__path-elapsed" cx="50" cy="50" r="45"></circle>
             <path
-              id="base-timer-path-remaining"
+              id="base-timer2-path-remaining"
               stroke-dasharray="283"
               class="base-timer__path-remaining ${remainingPathColor}"
               d="
@@ -80,9 +80,9 @@
             ></path>
           </g>
         </svg>
-        <span id="base-timer-label" class="base-timer__label">${formatTime(
+        <div id="base-timer2-label" class="base-timer__label">${formatTime(
           timeLeft
-        )}</span>
+        )}</div>
       </div>
     </div>
     <div class="column">

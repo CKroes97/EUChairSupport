@@ -31,3 +31,4 @@ import './scss/app.scss'
 import "@fortawesome/fontawesome-free/js/all";
 import './js/hamburger.js';
 import './js/timers.js';
+import './js/timers2.js';

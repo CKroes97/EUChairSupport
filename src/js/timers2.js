@@ -1,4 +1,4 @@
-console.log("👋 This message is being logged by 'timers.js', included via webpack"); // Just to make sure when I start the app that the file has been correctly handled by Webpack;
+console.log("👋 This message is being logged by 'timers2.js', included via webpack"); // Just to make sure when I start the app that the file has been correctly handled by Webpack;
 
 // Credit: Mateusz Rybczonec
 
@@ -8,7 +8,7 @@ const FULL_DASH_ARRAY = 283;
 const COLOR_CODES = {
   info: {
     color: "green"
-  },
+  }
 };
 
 const TIME_LIMIT = 20;
@@ -28,7 +28,7 @@ function startTimer() {
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(
+    document.getElementById("base-timer2-label").innerHTML = formatTime(
       timeLeft
     );
     setCircleDasharray();
@@ -50,6 +50,7 @@ function formatTime(time) {
   return `${minutes}:${seconds}`;
 }
 
+
 function calculateTimeFraction() {
   const rawTimeFraction = timeLeft / TIME_LIMIT;
   return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
@@ -60,6 +61,6 @@ function setCircleDasharray() {
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
   document
-    .getElementById("base-timer-path-remaining")
+    .getElementById("base-timer2-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
