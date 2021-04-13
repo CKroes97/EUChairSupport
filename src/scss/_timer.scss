@@ -9,6 +9,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 2rem;
+      color: $SWhite;
     }
   }
   
@@ -25,7 +26,7 @@
   
   .base-timer__path-elapsed {
     stroke-width: 7px;
-    stroke: grey;
+    stroke: $SObsidian;
   }
   
   .base-timer__path-remaining {
@@ -34,7 +35,7 @@
     transform: rotate(90deg);
     transform-origin: center;
     fill-rule: nonzero;
-    stroke: currentColor;
+    stroke: $SYellow;
   }
   
   .base-timer__path-remaining.green {

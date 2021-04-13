@@ -1,22 +1,35 @@
 
 
 html{
-    background-color:blueviolet;
+    background-color: $SBlue;
     font-family: 'Bebas Neue', cursive;
 }
 
 body{
-    color: white;
     font-family: 'Bebas Neue', cursive;
+    color: $SWhite;
 }
 
 .navbar{
         font-size: 1.6rem;
         padding-left: auto;
         padding-right: auto;
+        background-color: $SDMagenta;
+        color: $SWhite;
         .navbar-item{
             padding-left: 1rem;
-            padding-right: 1rem;    
+            padding-right: 1rem;
+            color: $SWhite;
+            &:hover{
+                background-color: $SMMagenta;
+                color: $SWhite;
+            }
+        }
+        .navbar-burger{
+            color: $SWhite;
+        }
+        .navbar-menu{
+            background-color: $SDMagenta;
         }
     }
 
