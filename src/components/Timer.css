@@ -1,30 +1,76 @@
 svg {
-    display: inline-block;
-    max-height: 50vh; }
-  
-  .base-timer__circle {
-    fill: none;
-    stroke: none;
-    max-height: 100%; }
-  
-  .base-timer__path-elapsed {
-    stroke-width: 7px;
-    stroke: #13173a; }
-  
-  .base-timer__path-remaining {
-    stroke-width: 7px;
-    stroke-linecap: round;
-    transform: rotate(90deg);
-    transform-origin: center;
-    fill-rule: nonzero;
-    stroke: #fdd002;
-    transition: 1s linear all; }
-  
-  .base-timer__path-remaining.green {
-    color: #41b883; }
-  
-  .base-timer__path-remaining.orange {
-    color: orange; }
-  
-  .base-timer__path-remaining.red {
-    color: red; }
+  display: inline-block;
+  max-height: 50vh;
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+  max-height: 100%;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: #13173a;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  fill-rule: nonzero;
+  stroke: #fdd002;
+  transition: 1s linear all;
+}
+
+.base-timer {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.base-timer .base-timer__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #c7d0d8;
+}
+
+.top-timer__circle {
+  fill: none;
+  stroke: none;
+  max-height: 100%;
+}
+
+.top-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: #13173a;
+}
+
+.top-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  fill-rule: nonzero;
+  stroke: #fdd002;
+  transition: 1s linear all;
+}
+
+.top-timer {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.top-timer .top-timer__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #c7d0d8;
+}

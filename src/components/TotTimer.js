@@ -17,7 +17,7 @@ function setCircleDasharray() {
         calculateTimeFraction() * FULL_DASH_ARRAY
     ).toFixed(0)} 283`;
     document
-        .getElementById("base-timer-path-remaining")
+        .getElementById("top-timer-path-remaining")
         .setAttribute("stroke-dasharray", circleDasharray);
 }
 
@@ -45,7 +45,7 @@ function startTimer() {
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
-        document.getElementById("base-timer-label").innerHTML = formatTime(
+        document.getElementById("top-timer-label").innerHTML = formatTime(
             timeLeft
         );
         setCircleDasharray();
@@ -60,12 +60,12 @@ function startTimer() {
 
 const TotTimer = () => {
     return (
-        <div className="base-timer">
-            <svg className="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <g className="base-timer__circle">
-                    <circle className="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                    <path id="base-timer-path-remaining" strokeDasharray="283"
-                        className="base-timer__path-remaining" d="
+        <div className="top-timer">
+            <svg className="top-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g className="top-timer__circle">
+                    <circle className="top-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                    <path id="top-timer-path-remaining" strokeDasharray="283"
+                        className="top-timer__path-remaining" d="
                   M 50, 50
                   m -45, 0
                   a 45,45 0 1,0 90,0
@@ -73,7 +73,7 @@ const TotTimer = () => {
                 "></path>
                 </g>
             </svg>
-            <div id="base-timer-label" className="base-timer__label">${formatTime(
+            <div id="top-timer-label" className="top-timer__label">${formatTime(
                 timeLeft
             )}</div>
         </div>

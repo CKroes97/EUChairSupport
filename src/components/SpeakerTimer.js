@@ -2,7 +2,7 @@ import React from 'react'
 import './Timer.css'
 
 const FULL_DASH_ARRAY = 283;
-const TIME_LIMIT = 40;
+const TIME_LIMIT = 20;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
