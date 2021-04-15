@@ -10,14 +10,14 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     webPreferences: {
-      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      preload:(__dirname, 'preload.js'),
     },
     width: 1350,
     height: 800,
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+  mainWindow.loadURL('http://localhost:3000');
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
