@@ -1,0 +1,10 @@
+.columns {
+    flex: 1 1 auto;
+    position: relative;
+    height: 50vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center; }
+    .columns .column {
+      position: relative;
+      height: auto; }
