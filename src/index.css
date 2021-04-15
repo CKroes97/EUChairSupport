@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+html {
+  background-color: #2e3c92;
+  font-family: "Bebas Neue", cursive; }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+body {
+  font-family: "Bebas Neue", cursive;
+  color: #c7d0d8; }
+
+
+.columns {
+  flex: 1 1 auto;
+  position: relative;
+  height: 50vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center; }
+  .columns .column {
+    position: relative;
+    height: auto; }
+
+.inputFields .columns {
+  height: auto; }
+.inputFields input {
+  width: 8vh;
+  font-size: 4vh; }
+
+.buttonList .button {
+  width: 100%; }
+
+.base-timer {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center; }
+  .base-timer .base-timer__label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #c7d0d8; }
+
+svg {
+  display: inline-block;
+  max-height: 50vh; }
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+  max-height: 100%; }
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: #13173a; }
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  fill-rule: nonzero;
+  stroke: #fdd002; }
+
+.base-timer__path-remaining.green {
+  color: #41b883; }
+
+.base-timer__path-remaining.orange {
+  color: orange; }
+
+.base-timer__path-remaining.red {
+  color: red; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,17 @@
+.navbar {
+  font-size: 1.6rem;
+  padding-left: auto;
+  padding-right: auto;
+  background-color: #a4187b;
+  color: #c7d0d8; }
+  .navbar .navbar-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #c7d0d8; }
+    .navbar .navbar-item:hover {
+      background-color: #a24085;
+      color: #c7d0d8; }
+  .navbar .navbar-burger {
+    color: #c7d0d8; }
+  .navbar .navbar-menu {
+    background-color: #a4187b; }
