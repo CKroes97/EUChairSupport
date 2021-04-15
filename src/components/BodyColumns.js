@@ -1,5 +1,7 @@
 import './BodyColumns.css';
 import SpeakerList from './SpeakerList.js'
+import SpeakerTimer from './SpeakerTimer.js'
+import TotTimer from './TotTimer.js'
 
 const BodyColumns = ({speakers, onDelete}) => {
     return (
@@ -10,10 +12,10 @@ const BodyColumns = ({speakers, onDelete}) => {
                     {speakers.length > 0 ? <SpeakerList speakers={speakers} onDelete={onDelete}/> : <h3>"No speakers left"</h3>}
                 </div>
                 <div className="column is-one-third">
-                    Timer one
+                    <TotTimer />
                 </div>
                 <div className="column is-one-third">
-                    Timer two
+                    <SpeakerTimer />
                 </div>
                 <div className="column">
                     Control

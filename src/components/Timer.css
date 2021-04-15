@@ -1,0 +1,30 @@
+svg {
+    display: inline-block;
+    max-height: 50vh; }
+  
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+    max-height: 100%; }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: #13173a; }
+  
+  .base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    fill-rule: nonzero;
+    stroke: #fdd002;
+    transition: 1s linear all; }
+  
+  .base-timer__path-remaining.green {
+    color: #41b883; }
+  
+  .base-timer__path-remaining.orange {
+    color: orange; }
+  
+  .base-timer__path-remaining.red {
+    color: red; }
