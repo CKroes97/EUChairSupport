@@ -69,9 +69,8 @@ const SpeakerTimer = () => {
                 "></path>
                 </g>
             </svg>
-            <div id="base-timer-label" className="base-timer__label">${formatTime(
-                timeLeft
-            )}</div>
+            <div id="base-timer-label" className="base-timer__label">{formatTime(timeLeft)}
+            </div>
         </div>
     )
 }

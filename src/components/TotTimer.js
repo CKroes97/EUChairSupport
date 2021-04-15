@@ -73,9 +73,8 @@ const TotTimer = () => {
                 "></path>
                 </g>
             </svg>
-            <div id="top-timer-label" className="top-timer__label">${formatTime(
-                timeLeft
-            )}</div>
+            <div id="top-timer-label" className="top-timer__label">{formatTime(timeLeft)}
+            </div>
         </div>
     )
 }
