@@ -2,18 +2,18 @@ import './BodyColumns.css';
 
 const BodyColumns = () => {
     return (
-        <div class="hero is-fullheight">
-            <div class="columns">
-                <div class="column">
+        <div className="hero" id="BodyColumns">
+            <div className="columns">
+                <div className="column">
                     <p>Topic</p>
                 </div>
-                <div class="column is-one-third">
+                <div className="column is-one-third">
                     Timer one
                 </div>
-                <div class="column is-one-third">
+                <div className="column is-one-third">
                     Timer two
                 </div>
-                <div class="column">
+                <div className="column">
                     Control
                 </div>
             </div>

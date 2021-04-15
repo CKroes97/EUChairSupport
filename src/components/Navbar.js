@@ -2,31 +2,20 @@ import './Navbar.css';
 
 function Navbar() {
   return (
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div class="navbar-menu" id="navMenu">
-      <div class="navbar-end">
-        <a class="navbar-item">
-          Speaker's List
-        </a>
-        <a class="navbar-item">
+      <div className="columns" id="navColumns">
+        <button className="column" id="navBlock">
+            Speakers List
+        </button>
+        <button className="column" id="navBlock">
           Informal Discussion
-        </a>
-        <a class="navbar-item">
-          Opening Statements
-        </a>
-        <a class="navbar-item">
+        </button>
+        <button className="column" id="navBlock">
+         Opening Statements
+        </button>
+        <button className="column" id="navBlock">
           Catch-The-Eye Debate
-        </a>
+        </button>
       </div>
-    </div>
-  </nav>
   );
 }
 
