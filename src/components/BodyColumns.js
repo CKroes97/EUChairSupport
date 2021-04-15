@@ -1,11 +1,13 @@
 import './BodyColumns.css';
+import SpeakerList from './SpeakerList.js'
 
-const BodyColumns = () => {
+const BodyColumns = ({speakers}) => {
     return (
         <div className="hero" id="BodyColumns">
             <div className="columns">
                 <div className="column">
-                    <p>Topic</p>
+                    <p>Speakers</p>
+                    <SpeakerList speakers={speakers} />
                 </div>
                 <div className="column is-one-third">
                     Timer one
