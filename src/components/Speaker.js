@@ -1,10 +1,10 @@
 import React from 'react'
 import './Speaker.css'
 
-const speaker = ({speaker}) => {
+const speaker = ({speaker, onDelete}) => {
     return (
-        <div className='speaker'>
-            <h3>{speaker.name}</h3>
+        <div className='speaker' id='speaker'>
+            <h3 onClick={() => onDelete(speaker.id)}>{speaker.name}</h3>
         </div>
     )
 }

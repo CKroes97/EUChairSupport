@@ -8,3 +8,9 @@
     #BodyColumns .columns .column {
       position: relative;
       height: auto; }
+
+    #BodyColumns h3{
+      padding: 1rem;
+      width: 100%;
+      font-size: 0.7rem;
+    }

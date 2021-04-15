@@ -1,13 +1,13 @@
 import './BodyColumns.css';
 import SpeakerList from './SpeakerList.js'
 
-const BodyColumns = ({speakers}) => {
+const BodyColumns = ({speakers, onDelete}) => {
     return (
         <div className="hero" id="BodyColumns">
             <div className="columns">
-                <div className="column">
+                <div className="column"> 
                     <p>Speakers</p>
-                    <SpeakerList speakers={speakers} />
+                    {speakers.length > 0 ? <SpeakerList speakers={speakers} onDelete={onDelete}/> : <h3>"No speakers left"</h3>}
                 </div>
                 <div className="column is-one-third">
                     Timer one
