@@ -1,13 +1,16 @@
 #BodyColumns .columns {
-    flex: 1 1 auto;
-    height: 50vh;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-align: center; }
+    padding-left: 1vw;
+    padding-right: 1vw;
+    text-align: center;
+    width: 98%; }
 
 
     #BodyColumns h3{
       padding: 1rem;
-      width: 100%;
       font-size: 0.7rem;
+    }
+    #BodyColumns .hero{
+      text-align: center;
+      width: 95%;
+
     }
