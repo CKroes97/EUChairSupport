@@ -1,13 +1,10 @@
 #BodyColumns .columns {
     flex: 1 1 auto;
-    position: relative;
     height: 50vh;
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: center; }
-    #BodyColumns .columns .column {
-      position: relative;
-      height: auto; }
+
 
     #BodyColumns h3{
       padding: 1rem;

@@ -8,7 +8,8 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #c7d0d8; }
+  color: #c7d0d8;
+ }
 
 
 
@@ -22,18 +23,9 @@ body {
 .buttonList .button {
   width: 100%; }
 
-.base-timer {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  text-align: center; }
-  .base-timer .base-timer__label {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: #c7d0d8; }
+::-webkit-scrollbar{
+  display: none;
+}
 
 
 

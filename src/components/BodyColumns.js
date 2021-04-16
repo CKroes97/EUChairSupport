@@ -2,6 +2,8 @@ import './BodyColumns.css';
 import SpeakerList from './SpeakerList.js'
 import SpeakerTimer from './SpeakerTimer.js'
 import TotTimer from './TotTimer.js'
+import ButtonList from './ButtonList.js'
+import InputFields from './InputFields.js'
 
 const BodyColumns = ({speakers, onDelete}) => {
     return (
@@ -19,6 +21,8 @@ const BodyColumns = ({speakers, onDelete}) => {
                 </div>
                 <div className="column">
                     Control
+                    <InputFields />
+                    <ButtonList />
                 </div>
             </div>
         </div>
