@@ -1,12 +1,12 @@
 import './BodyColumns.css';
-import SpeakerList from './SpeakerList.js'
-import SpeakerTimer from './SpeakerTimer.js'
-import TotTimer from './TotTimer.js'
-import ButtonList from './ButtonList.js'
-import InputFields from './InputFields.js'
-import SpeakerSelector from './SpeakerSelector.js'
+import SpeakerList from './BodyColumns/SpeakerList.js'
+import SpeakerTimer from './BodyColumns/SpeakerTimer.js'
+import TotTimer from './BodyColumns/TotTimer.js'
+import ButtonList from './BodyColumns/ButtonList.js'
+import InputFields from './BodyColumns/InputFields.js'
+import SpeakerSelector from './BodyColumns/SpeakerSelector.js'
 
-const BodyColumns = ({speakers, onDelete}) => {
+const BodyColumns = ({speakers, onDelete }) => {
     return (
         <div className="hero" id="BodyColumns">
             <div className="columns">

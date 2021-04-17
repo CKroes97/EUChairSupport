@@ -1,0 +1,9 @@
+#SpeakerSelector{
+    color: black;
+}
+
+#SpeakerSelector .dropdown-menu{
+    max-height: 30vh;
+    overflow: auto; 
+}
+
