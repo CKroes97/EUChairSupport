@@ -6,7 +6,30 @@ import ButtonList from './BodyColumns/ButtonList.js'
 import InputFields from './BodyColumns/InputFields.js'
 import SpeakerSelector from './BodyColumns/SpeakerSelector.js'
 
-const BodyColumns = ({speakers, onDelete }) => {
+    //Initialise speakers list
+    const [speakers, setSpeakers] = useState([
+        {
+            id: 1,
+            name: 'Netherlands',
+        },
+        {
+            id: 2,
+            name: 'Belgium',
+        },
+        {
+            id: 3,
+            name: 'Germany',
+        }
+    ]
+    )
+
+    
+    //Delete Speaker
+    const deleteSpeaker = (id) => {
+        setSpeakers(speakers.filter((speaker) => speaker.id !== id))
+    }
+
+const BodyColumns = ({onDelete}) => {
     return (
         <div className="hero" id="BodyColumns">
             <div className="columns">

@@ -23,30 +23,7 @@ const App = () => {
     ]
     )
 
-    const [memberStates, setMemberStates] = useState([]) 
     
-    const getMemberStates=()=>{
-        fetch('MemberStates.json'
-        ,{
-          headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-           }
-        }
-        )
-          .then(function(response){
-            return response.json();
-          })
-          .then(function(myJson) {
-            setMemberStates(myJson)
-          });
-      }
-      useEffect(()=>{
-        getMemberStates()
-      },[])
-    
-
-
     //Delete Speaker
     const deleteSpeaker = (id) => {
         setSpeakers(speakers.filter((speaker) => speaker.id !== id))
@@ -55,7 +32,7 @@ const App = () => {
     return(
     <section>
         <Navbar />
-        <BodyColumns speakers={speakers} memberStates={memberStates} onDelete={deleteSpeaker}/>
+        <BodyColumns speakers={speakers} onDelete={deleteSpeaker}/>
     </section>
     )
 }
