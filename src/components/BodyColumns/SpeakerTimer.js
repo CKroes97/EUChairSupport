@@ -75,6 +75,6 @@ const SpeakerTimer = () => {
     )
 }
 
-startTimer();
+
 
 export default SpeakerTimer

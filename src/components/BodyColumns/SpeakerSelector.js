@@ -12,7 +12,6 @@ const SpeakerSelector = () => {
                 return response.json();
             })
             .then(function (myJson) {
-                console.log(myJson)
                 setMemberStates(myJson.memberStates)
             });
     }
