@@ -4,6 +4,7 @@ import reactDom from "react-dom";
 import './Timer.css'
 
 export class Timer extends Component {
+    //Used timer sucks terribly, above a workaround for scaling
     constructor(props) {
         super(props);
         this.state = {
@@ -37,10 +38,11 @@ componentWillUnmount() {
 
 
 render() {
+    //read props
     const time = this.props.time
     const isRunning = this.props.isRunning
 
-
+    // render timer
     const RenderTime = ({ remainingTime }) => {
         const currentTime = useRef(remainingTime);
         const prevTime = useRef(null);
@@ -81,7 +83,6 @@ render() {
         );
     };
 
-    console.log(time)
     return (
         <div id="Timer">
             <CountdownCircleTimer
