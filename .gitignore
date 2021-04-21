@@ -37,10 +37,11 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 out/
+build/
 
 # Dependency directories
 node_modules/
-jspm_packages/
+jspm_packages/ 
 
 # TypeScript v1 declaration files
 typings/
@@ -60,6 +61,12 @@ typings/
 .rts2_cache_es/
 .rts2_cache_umd/
 
+# SASS cache
+.sass-cache/
+
+# Webpack
+.webpack/
+
 # Optional REPL history
 .node_repl_history
 
@@ -68,10 +75,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

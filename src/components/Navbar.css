@@ -1,0 +1,29 @@
+#navColumns {
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 0.5rem;
+  background-color: #a4187b;
+  text-align: center;
+  color: #c7d0d8;
+}
+#navColumns .column {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #a4187b;
+  border: 0;
+  font-size: 1.6rem;
+  color: #c7d0d8;
+  font-family: "Bebas Neue", cursive;
+  outline: none;
+  cursor: pointer;
+}
+#navColumns .column:hover {
+  background-color: #a24085;
+  color: #c7d0d8;
+  border: 0;
+}
+#navColumns .column:active {
+  background-color: #a4187b;
+  color: #c7d0d8;
+  border: 0;
+}

@@ -1,0 +1,11 @@
+#speaker{
+    margin: 0.1rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+#speaker h3{
+    padding: 0.25rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
