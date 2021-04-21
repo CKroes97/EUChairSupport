@@ -3,7 +3,7 @@ import './SpeakerSelector.css'
 import { useState, useEffect } from 'react'
 
 
-const SpeakerSelector = () => {
+const SpeakerSelector = ({addSpeaker}) => {
     const [memberStates, setMemberStates] = useState([])
 
     const getMemberStates = () => {
@@ -31,7 +31,7 @@ const SpeakerSelector = () => {
                     </button>
                     <div className="dropdown-menu" id="dropdown-menu" role="menu">
                         <div className="dropdown-content">
-                            {memberStates.map((member) => (<AvailableSpeaker key={member.id} member={member} />))}
+                            {memberStates.map((member) => (<AvailableSpeaker key={member.id} member={member} addSpeaker={addSpeaker}/>))}
                         </div>
                     </div>
                 </div>

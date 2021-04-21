@@ -16,18 +16,21 @@ const BodyColumns = () => {
     const [speakers, setSpeakers] = useState([
         {
             id: 1,
-            name: 'Netherlands',
+            country: 'Netherlands',
         },
         {
             id: 2,
-            name: 'Belgium',
+            country: 'Belgium',
         },
         {
             id: 3,
-            name: 'Germany',
+            country: 'Germany',
         }
     ]
     )
+    const addSpeaker = (pers) =>{
+        setSpeakers([...speakers, pers])
+    }
     //Delete Speaker
     const deleteSpeaker = (id) => {
         setSpeakers(speakers.filter((speaker) => speaker.id !== id))
@@ -49,7 +52,7 @@ const BodyColumns = () => {
             <div className="columns">
                 <div className="column is-one-fifth">
                     <p>Speakers</p>
-                    <SpeakerSelector />
+                    <SpeakerSelector addSpeaker={addSpeaker} />
                     {speakers.length > 0 ? <SpeakerList speakers={speakers} onDelete={deleteSpeaker} /> : <h3>"No speakers left"</h3>}
                 </div>
                 <div className="column is-one-third">

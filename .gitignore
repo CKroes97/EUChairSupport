@@ -41,8 +41,7 @@ build/
 
 # Dependency directories
 node_modules/
-jspm_packages/
-*yarn.lock
+jspm_packages/ 
 
 # TypeScript v1 declaration files
 typings/
