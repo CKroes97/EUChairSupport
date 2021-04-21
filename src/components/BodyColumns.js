@@ -13,21 +13,8 @@ const BodyColumns = () => {
 
 
     //Initialise speakers list
-    const [speakers, setSpeakers] = useState([
-        {
-            id: 1,
-            country: 'Netherlands',
-        },
-        {
-            id: 2,
-            country: 'Belgium',
-        },
-        {
-            id: 3,
-            country: 'Germany',
-        }
-    ]
-    )
+    const [speakers, setSpeakers] = useState([])
+    //add a speaker to the speaker's list
     const addSpeaker = (pers) =>{
         setSpeakers([...speakers, pers])
     }
@@ -36,8 +23,18 @@ const BodyColumns = () => {
         setSpeakers(speakers.filter((speaker) => speaker.id !== id))
     }
 
+    const [activeSpeaker, setActiveSpeaker] = useState('')
+    const nextSpeaker = () =>{
+        if (speakers.length >=1){
+        setActiveSpeaker(speakers.pop(0).country)
+        resetSpeaker()
+        }
+    }
+
+    //initialise times
    const [speakerTime, setSpeakerTime] = useState(20)
    const [totalTime, setTotalTime] = useState(40)
+   //initialise isrunning tag
    const [isRunning, setIsRunning] = useState(false)
    // to reset the sucky timers pass a new key
    const [speakerResetCounter, setSpeakerResetCounter] = useState(0)
@@ -46,6 +43,9 @@ const BodyColumns = () => {
       setSpeakerResetCounter(speakerResetCounter+1)
       setTotalResetCounter(totalResetCounter+1)
    }
+   const resetSpeaker = () =>{
+    setSpeakerResetCounter(speakerResetCounter+1)
+   }
 
     return (
         <div className="hero" id="BodyColumns">
@@ -53,7 +53,7 @@ const BodyColumns = () => {
                 <div className="column is-one-fifth">
                     <p>Speakers</p>
                     <SpeakerSelector addSpeaker={addSpeaker} />
-                    {speakers.length > 0 ? <SpeakerList speakers={speakers} onDelete={deleteSpeaker} /> : <h3>"No speakers left"</h3>}
+                    <SpeakerList speakers={speakers} onDelete={deleteSpeaker} />
                 </div>
                 <div className="column is-one-third">
                     <Timer key={totalResetCounter} time={totalTime} isRunning={isRunning} />
@@ -64,9 +64,10 @@ const BodyColumns = () => {
                 <div className="column">
                     Control
                     <InputFields setSpeakerTime={setSpeakerTime} setTotalTime={setTotalTime} />
-                    <ButtonList setIsRunning={setIsRunning} resetTimers={resetTimers}/>
+                    <ButtonList setIsRunning={setIsRunning} resetTimers={resetTimers} nextSpeaker={nextSpeaker}/>
                 </div>
             </div>
+            <h1>{activeSpeaker}</h1>
         </div>
     )
 }

@@ -1,11 +1,13 @@
 #speaker{
-    background-color: grey;
-    border-radius: 15px;
-    margin: 0.5rem;
+    margin: 0.1rem;
     cursor: pointer;
     padding: 0;
+    color: var(--white);
+
 }
 
 #speaker h3{
     padding: 0.25rem;
+    font-weight: 500;
+    font-size: 1.7rem;
 }

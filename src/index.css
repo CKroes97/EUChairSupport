@@ -2,6 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+:root {
+  --white: #c7d0d8;
+  --blue: #2e3c92;
+  --yellow: #fdd002;
+  --obsidian: #13173a;
+  --dmagenta: #a24085;
+  --lmagenta: #b84f99;
+  --bmagenta: #a4187b;
+
+
+}
+
 html {
   background-color: #2e3c92;
   font-family: 'Roboto', sans-serif;

@@ -31,7 +31,7 @@ svg{
   align-items: center;
   transform: translateY(0);
   opacity: 1;
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 
 .time-wrapper .time.up {

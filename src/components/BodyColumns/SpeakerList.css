@@ -1,0 +1,7 @@
+#SpeakerList{
+    background-color: var(--obsidian);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}

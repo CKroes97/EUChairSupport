@@ -1,4 +1,4 @@
-#BodyColumns .columns {
+#BodyColumns{
     padding-left: 1vw;
     padding-right: 1vw;
     text-align: center;
@@ -13,4 +13,11 @@
       text-align: center;
       width: 95%;
 
+    }
+    #BodyColumns h1{
+      padding: 1rem;
+      font-size: 3rem;
+    }
+    #BodyColumns .column{
+      text-align: center;
     }

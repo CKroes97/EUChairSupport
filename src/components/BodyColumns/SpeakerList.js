@@ -4,8 +4,8 @@ import Speaker from './Speaker'
 
 const CountryList = ({speakers, onDelete}) => {
     return (
-        <div>
-            {speakers.map((entry) => (<Speaker key={entry.index} speaker={entry} onDelete={onDelete}/>))}
+        <div id="SpeakerList">
+            {speakers.map((entry) => (<Speaker key={entry.id} speaker={entry} onDelete={onDelete}/>))}
         </div>
     )
 }
