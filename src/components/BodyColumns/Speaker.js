@@ -1,10 +1,10 @@
 import React from 'react'
 import './Speaker.css'
 
-const speaker = ({speaker, onDelete}) => {
+const speaker = ({speaker, fastForward}) => {
     return (
         <div className='speaker' id='speaker'>
-            <h3 onClick={() => onDelete(speaker.id)}>{speaker.country}</h3>
+            <h3 onDoubleClick={() => fastForward(speaker.id)}>{speaker.country}</h3>
         </div>
     )
 }

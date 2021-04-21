@@ -2,10 +2,10 @@ import './SpeakerList.css'
 import Speaker from './Speaker'
 
 
-const CountryList = ({speakers, onDelete}) => {
+const CountryList = ({speakers, fastForward}) => {
     return (
         <div id="SpeakerList">
-            {speakers.map((entry) => (<Speaker key={entry.id} speaker={entry} onDelete={onDelete}/>))}
+            {speakers.map((entry) => (<Speaker key={entry.id} speaker={entry} fastForward={fastForward}/>))}
         </div>
     )
 }

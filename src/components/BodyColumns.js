@@ -18,15 +18,20 @@ const BodyColumns = () => {
     const addSpeaker = (pers) =>{
         setSpeakers([...speakers, pers])
     }
-    //Delete Speaker
-    const deleteSpeaker = (id) => {
-        setSpeakers(speakers.filter((speaker) => speaker.id !== id))
+    //Skip speakers on double click
+    const fastForward = (id) => {
+        var index = speakers.map(function(el) {
+            return el.id;
+          }).indexOf(id);
+        setActiveSpeaker(speakers[index].country)
+        setSpeakers(speakers.filter((speaker) => speakers.indexOf(speaker) > (index)))       
     }
 
     const [activeSpeaker, setActiveSpeaker] = useState('')
     const nextSpeaker = () =>{
         if (speakers.length >=1){
-        setActiveSpeaker(speakers.pop(0).country)
+        setActiveSpeaker(speakers[0].country)
+        setSpeakers(speakers.filter((speaker) => speakers.indexOf(speaker) !== (0) ))
         resetSpeaker()
         }
     }
@@ -53,7 +58,7 @@ const BodyColumns = () => {
                 <div className="column is-one-fifth">
                     <p>Speakers</p>
                     <SpeakerSelector addSpeaker={addSpeaker} />
-                    <SpeakerList speakers={speakers} onDelete={deleteSpeaker} />
+                    <SpeakerList speakers={speakers} fastForward={fastForward} />
                 </div>
                 <div className="column is-one-third">
                     <Timer key={totalResetCounter} time={totalTime} isRunning={isRunning} />
