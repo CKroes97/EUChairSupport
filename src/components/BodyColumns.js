@@ -6,12 +6,8 @@ import SpeakerSelector from './BodyColumns/SpeakerSelector.js'
 import Timer from './BodyColumns/Timer.js'
 import { useState, useEffect, React } from 'react'
 
-
-
-
 const BodyColumns = () => {
-
-
+    
     //Initialise speakers list
     const [speakers, setSpeakers] = useState([])
     //add a speaker to the speaker's list
@@ -44,6 +40,8 @@ const BodyColumns = () => {
    // to reset the sucky timers pass a new key
    const [speakerResetCounter, setSpeakerResetCounter] = useState(0)
    const [totalResetCounter, setTotalResetCounter] = useState(0)
+
+   //reset functions pass new keys, see docs in ReadME for why
    const resetTimers = () =>{
       setSpeakerResetCounter(speakerResetCounter+1)
       setTotalResetCounter(totalResetCounter+1)

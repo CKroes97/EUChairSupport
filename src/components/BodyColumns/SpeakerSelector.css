@@ -1,5 +1,7 @@
-#SpeakerSelector{
-    color: black;
+#SpeakerSelector .button{
+    color: var(--white);
+    background-color: var(--dmagenta);
+    border: var(--white);
 }
 
 #SpeakerSelector .dropdown-menu{
@@ -7,3 +9,15 @@
     overflow: auto; 
 }
 
+
+
+#SpeakerSelector .dropdown-content{
+    background-color: var(--obsidian);
+}
+#SpeakerSelector .dropdown-item{
+    color: white;
+}
+
+#SpeakerSelector .dropdown-item:hover{
+    background-color: black;
+}

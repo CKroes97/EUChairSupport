@@ -15,7 +15,7 @@
 }
 
 html {
-  background-color: #2e3c92;
+  background-color: var(--blue);
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
 }
@@ -23,7 +23,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #c7d0d8;
+  color: var(--white);
  }
 
 
