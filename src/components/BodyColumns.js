@@ -4,7 +4,7 @@ import ButtonList from './BodyColumns/ButtonList.js'
 import InputFields from './BodyColumns/InputFields.js'
 import SpeakerSelector from './BodyColumns/SpeakerSelector.js'
 import Timer from './BodyColumns/Timer.js'
-import { useState, React } from 'react'
+import { useState, useEffect, React } from 'react'
 
 
 
@@ -35,6 +35,7 @@ const BodyColumns = () => {
 
    const [speakerTime, setSpeakerTime] = useState(20)
    const [totalTime, setTotalTime] = useState(5)
+   const [isRunning, setIsRunning] = useState(false)
 
 
     return (
@@ -46,15 +47,15 @@ const BodyColumns = () => {
                     {speakers.length > 0 ? <SpeakerList speakers={speakers} onDelete={deleteSpeaker} /> : <h3>"No speakers left"</h3>}
                 </div>
                 <div className="column is-one-third">
-                    <Timer time={totalTime} />
+                    <Timer time={totalTime} isRunning={isRunning} />
                 </div>
                 <div className="column is-one-third">
-                    <Timer time={speakerTime} />
+                    <Timer time={speakerTime} isRunning={isRunning} />
                 </div>
                 <div className="column">
                     Control
                     <InputFields setSpeakerTime={setSpeakerTime} setTotalTime={setTotalTime} />
-                    <ButtonList />
+                    <ButtonList setIsRunning={setIsRunning}/>
                 </div>
             </div>
         </div>

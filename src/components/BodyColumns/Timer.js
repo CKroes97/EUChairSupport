@@ -8,9 +8,10 @@ export class Timer extends Component {
         super(props);
         this.state = {
           width:  800,
-          time: this.props.time
         }
       }
+
+      getDerivedStateFromProps
 
       updateDimensions() {
           let update_width  = window.innerWidth/4;
@@ -33,7 +34,13 @@ componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions.bind(this));
 }
 
+
+
 render() {
+    const time = this.props.time
+    const isRunning = this.props.isRunning
+
+
     const RenderTime = ({ remainingTime }) => {
         const currentTime = useRef(remainingTime);
         const prevTime = useRef(null);
@@ -74,12 +81,13 @@ render() {
         );
     };
 
+    console.log(time)
     return (
         <div id="Timer">
             <CountdownCircleTimer
-                isPlaying
+                isPlaying = {isRunning}
                 size={this.state.width}
-                duration={this.state.time}
+                duration={time}
                 colors={[['#fdd002', 1]]}>
                 {RenderTime}
             </CountdownCircleTimer>
