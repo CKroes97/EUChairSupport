@@ -24,13 +24,13 @@ const BodyColumns = () => {
             return el.id;
           }).indexOf(id);
         setActiveSpeaker(speakers[index].country)
-        setSpeakers(speakers.filter((speaker) => speakers.indexOf(speaker) > (index)))       
+        setSpeakers(speakers.filter((speaker) => speakers.indexOf(speaker) > (index-1)))       
     }
 
     const [activeSpeaker, setActiveSpeaker] = useState('')
     const nextSpeaker = () =>{
-        if (speakers.length >=1){
-        setActiveSpeaker(speakers[0].country)
+        if (speakers.length > 1){
+        setActiveSpeaker(speakers[1].country)
         setSpeakers(speakers.filter((speaker) => speakers.indexOf(speaker) !== (0) ))
         resetSpeaker()
         }
