@@ -1,7 +1,8 @@
 import './BodyColumns.css';
 import SpeakerList from './BodyColumns/SpeakerList.js'
 import ButtonList from './BodyColumns/ButtonList.js'
-import InputFields from './BodyColumns/InputFields.js'
+import InputSpeaker from './BodyColumns/InputSpeaker.js'
+import InputTotal from './BodyColumns/InputTotal.js'
 import SpeakerSelector from './BodyColumns/SpeakerSelector.js'
 import Timer from './BodyColumns/Timer.js'
 import { useState, useEffect, React } from 'react'
@@ -56,7 +57,7 @@ const BodyColumns = () => {
                 <div className="column is-one-fifth">
                     <p>Speakers</p>
                     <SpeakerSelector addSpeaker={addSpeaker} />
-                    <SpeakerList speakers={speakers} fastForward={fastForward} />
+                    <SpeakerList speakers={speakers} fastForward={fastForward} setIsRunning={setIsRunning} />
                 </div>
                 <div className="column is-one-third">
                     <Timer key={totalResetCounter} time={totalTime} isRunning={isRunning} />
@@ -66,7 +67,8 @@ const BodyColumns = () => {
                 </div>
                 <div className="column">
                     Control
-                    <InputFields setSpeakerTime={setSpeakerTime} setTotalTime={setTotalTime} />
+                    <InputTotal setTotalTime={setTotalTime} />
+                    <InputSpeaker setSpeakerTime={setSpeakerTime} />
                     <ButtonList setIsRunning={setIsRunning} resetTimers={resetTimers} nextSpeaker={nextSpeaker}/>
                 </div>
             </div>
