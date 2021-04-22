@@ -1,21 +1,22 @@
 import './Navbar.css';
+import { Router, Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-      <div className="columns" id="navColumns">
-        <button className="column" id="navBlock">
-            Speakers List
-        </button>
-        <button className="column" id="navBlock">
-          Informal Discussion
-        </button>
-        <button className="column" id="navBlock">
-         Opening Statements
-        </button>
-        <button className="column" id="navBlock">
-          Catch-The-Eye Debate
-        </button>
-      </div>
+    <div className="columns" id="navColumns">
+      <Link className="column" id="navBlock" to="/sl">
+        Speakers List
+          </Link>
+      <Link className="column" id="navBlock" to="/id">
+        Informal Discussion
+          </Link>
+      <Link className="column" id="navBlock" to="/os">
+        Opening Statements
+          </Link>
+      <Link className="column" id="navBlock" to="/cte">
+        Catch-The-Eye Debate
+          </Link>
+    </div>
   );
 }
 

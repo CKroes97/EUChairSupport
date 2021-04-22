@@ -4,22 +4,7 @@ import { useState, useEffect } from 'react'
 import { FaAngleDown } from "react-icons/fa";
 
 
-const SpeakerSelector = ({addSpeaker}) => {
-    const [memberStates, setMemberStates] = useState([])
-
-    const getMemberStates = () => {
-        fetch('MemberStates.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                setMemberStates(myJson.memberStates)
-            });
-    }
-    useEffect(() => {
-        getMemberStates()
-    }, [])
-
+const SpeakerSelector = ({addSpeaker, members}) => {
     return (
         <div id="SpeakerSelector">
             <div className="dropdown is-hoverable">
@@ -32,7 +17,7 @@ const SpeakerSelector = ({addSpeaker}) => {
                     </button>
                     <div className="dropdown-menu" id="dropdown-menu" role="menu">
                         <div className="dropdown-content">
-                            {memberStates.map((member) => (<AvailableSpeaker key={member.id} member={member} addSpeaker={addSpeaker}/>))}
+                            {members.map((member) => (<AvailableSpeaker key={member.id} member={member} addSpeaker={addSpeaker}/>))}
                         </div>
                     </div>
                 </div>
