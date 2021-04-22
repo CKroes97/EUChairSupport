@@ -19,3 +19,10 @@
 #BodyColumns .column {
   text-align: center;
 }
+#BodyColumns .column {
+  text-align: center;
+}
+
+#BodyColumns .column.is-small-width{
+  max-width: 14vw;
+}

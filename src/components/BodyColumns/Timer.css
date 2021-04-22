@@ -1,7 +1,11 @@
-.Timer{
+#Timer{
   width: 100%;
-  display: inline-block;
   text-align: center;
+  left: auto;
+  right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .timer-wrapper {
   display: flex;
@@ -14,16 +18,10 @@
   width: 100%;
 }
 
-#Timer svg{
-  display: inline-block;
-  height: 30vw;
-  width: 30vw;
-}
+
 
 .time-wrapper .time {
   position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -32,6 +30,7 @@
   transform: translateY(0);
   opacity: 1;
   transition: all 0.1s;
+  margin: 0 auto;
 }
 
 .time-wrapper .time.up {
