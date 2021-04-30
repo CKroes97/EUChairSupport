@@ -1,25 +1,28 @@
 import Navbar from './components/Navbar'
 import BodyColumns from './components/BodyColumns'
 import ChamberSelector from './components/ChamberSelector'
+import PresenceList from './components/PresenceList'
+import history from './History'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import {useState} from 'react'
+import { useState } from 'react'
 
 
 const App = () => {
     const [chamber, setChamber] = useState("")
-    const renderBody = () => {
-        if (chamber === ""){ 
-            return <ChamberSelector setChamber={setChamber} />
-        } else if (chamber === "parl" || chamber === "council") {
-            return <section><Navbar chamber={chamber} setChamber={setChamber}/>
-            <BodyColumns /></section>
-        }
-    }
     return (
         <Router>
-            <section>
-                {renderBody()}
-            </section>
+            <Switch>
+                <Route exact path="/">
+                    <ChamberSelector setChamber={setChamber} history={history} />
+                </Route>
+                <Route path="/presence">
+                    <PresenceList />
+                </Route>
+                <Route>
+                    <Navbar chamber={chamber} setChamber={setChamber} />
+                    <BodyColumns />
+                </Route>
+            </Switch>
         </Router>
     )
 }
