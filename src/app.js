@@ -2,7 +2,6 @@ import Navbar from './components/Navbar'
 import BodyColumns from './components/BodyColumns'
 import ChamberSelector from './components/ChamberSelector'
 import PresenceList from './components/PresenceList'
-import history from './History'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -13,7 +12,7 @@ const App = () => {
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <ChamberSelector setChamber={setChamber} history={history} />
+                    <ChamberSelector setChamber={setChamber}  />
                 </Route>
                 <Route path="/presence">
                     <PresenceList />
