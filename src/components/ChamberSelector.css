@@ -1,0 +1,13 @@
+#ChamberSelector{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ChamberSelector .button{
+    height: 25vh;
+    width: 25vw;
+    font-size: 3rem;
+}
+

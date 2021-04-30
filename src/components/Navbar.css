@@ -5,10 +5,11 @@
   background-color: #a4187b;
   text-align: center;
   color: #c7d0d8;
+  height: 8vh;
+  display: flex;
+  vertical-align: middle;
 }
 #navColumns .column {
-  padding-left: 1rem;
-  padding-right: 1rem;
   background-color: #a4187b;
   border: 0;
   font-size: 1.6rem;
@@ -16,6 +17,9 @@
   font-family: "Bebas Neue", cursive;
   outline: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #navColumns .column:hover {
   background-color: #a24085;
@@ -28,6 +32,4 @@
   border: 0;
 }
 
-#navColumns a{
-  color: white;
-}
+

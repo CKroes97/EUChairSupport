@@ -1,7 +1,21 @@
 import './Navbar.css';
-import { Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({ chamber, setChamber }) {
+  const modDisBlock = () => {
+    if (chamber === "parl") {
+      return <Link className="column" id="navBlock" to="/cte">
+        Catch-the-Eye Debate
+       </Link>
+    } else {
+      return <Link className="column" id="navBlock" to="/cte">
+        Moderated Discussion
+       </Link>
+    }
+  }
+  const clearChamber = () => {
+    setChamber("")
+  }
   return (
     <div className="columns" id="navColumns">
       <Link className="column" id="navBlock" to="/sl">
@@ -12,10 +26,11 @@ function Navbar() {
           </Link>
       <Link className="column" id="navBlock" to="/os">
         Opening Statements
-          </Link>
-      <Link className="column" id="navBlock" to="/cte">
-        Catch-The-Eye Debate
-          </Link>
+      </Link>
+      {modDisBlock()}
+      <button className="columm" onClick={clearChamber}>
+        reset
+        </button>
     </div>
   );
 }
