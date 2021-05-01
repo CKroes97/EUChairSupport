@@ -6,8 +6,8 @@ import InputSpeaker from './BodyColumns/InputSpeaker.js'
 import InputTotal from './BodyColumns/InputTotal.js'
 import SpeakerSelector from './BodyColumns/SpeakerSelector.js'
 import Timer from './BodyColumns/Timer.js'
-import { useState, useEffect, React } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { useState, React } from 'react'
+import { BrowserRouter as  Switch, Route } from 'react-router-dom'
 
 const BodyColumns = () => {
 
@@ -38,18 +38,6 @@ const BodyColumns = () => {
     //load all participating speakers
     const [members, setMembers] = useState([])
 
-    const getMembers = () => {
-        fetch('MemberStates.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                setMembers(myJson.memberStates)
-            });
-    }
-    useEffect(() => {
-        getMembers()
-    }, [])
 
     //initialise times
     const [speakerTime, setSpeakerTime] = useState(20)
