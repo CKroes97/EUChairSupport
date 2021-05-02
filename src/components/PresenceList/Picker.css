@@ -1,8 +1,10 @@
-.picker .menu-list{
-    background-color: white;
-    color: black;
+.picker{
+    color: white;
     border-radius: 10px;
     font-size: 1.2rem;
-    max-height: 90vh;
-    overflow-y: scroll;
+}
+
+.picker select{
+    width: 100%;
+    font-size: 1.3rem;
 }

@@ -2,7 +2,7 @@ import PickerItem from './PickerItem'
 import { useState, useEffect } from 'react'
 import './Picker.css'
 
-const CountryPicker = () => {
+const CountryPicker = ({setSelected}) => {
     const [countries, setCountries] = useState([])
     const getCountries = () => {
         fetch('MemberStates.json')
@@ -17,15 +17,18 @@ const CountryPicker = () => {
         getCountries()
     }, [])
 
+    const changeSelect = () =>{
+        var selectCountry = document.getElementById("selectCountry");
+        setSelected(selectCountry.options[selectCountry.selectedIndex].value)
+    }
+
     return (
-        <div class= "picker" id="CountryPicker">
-            <div className="menu">
-                <p className="menu-label">Country</p>
-                <ul className="menu-list">
+        <div className= "picker" id="CountryPicker">
+            <h1>Country</h1>
+            <select size="18" id="selectCountry" onChange={changeSelect}>
                     {countries.map((entry) => (<PickerItem key={entry.id} name={entry.country} />))}
-                </ul>
+                </select>
             </div>
-        </div >
     )
 }
 

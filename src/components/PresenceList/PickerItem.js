@@ -1,10 +1,11 @@
 import React from 'react'
+import './PickerItem.css'
 
 const PickerItem = ({name}) => {
     return (
-        <a id="PickeItem">
+        <option id="PickerItem">
             {name}
-        </a>
+        </option>
     )
 }
 
