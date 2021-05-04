@@ -1,16 +1,16 @@
 import './ChamberSelector.css'
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 
 const ChamberSelector = ({ setChamber }) => {
-    const history = useHistory()
+    let navigate = useNavigate()
     const setParl = () => {
         setChamber("parl")
-        history.push('/presence')
+        navigate('/presence')
     }
     const setCouncil = () => {
         setChamber("council")
-        history.push('/presence')
+        navigate('/presence')
     }
     return (
         <div className="hero" id="ChamberSelector">

@@ -23,7 +23,7 @@ const FactionPicker = ({setSelected}) => {
     }
 
     return (
-        <div class="picker" id="FactionPicker">
+        <div className="picker" id="FactionPicker">
             <h1>Faction</h1>
             <select id="selectFaction" size="18" onChange={changeSelect}>
                 {factions.map((entry) => (<PickerItem key={entry.id} name={entry.faction} />))}

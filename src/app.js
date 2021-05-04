@@ -1,8 +1,7 @@
-import Navbar from './components/Navbar'
 import BodyColumns from './components/BodyColumns'
 import ChamberSelector from './components/ChamberSelector'
 import PresenceList from './components/PresenceList'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 
@@ -13,18 +12,18 @@ const App = () => {
 
     return (
         <Router>
-            <Switch>
-                <Route exact path="/">
-                    <ChamberSelector setChamber={setChamber}  />
+            <Routes>
+                <Route path="/" element={
+                    <ChamberSelector setChamber={setChamber}/>}>
                 </Route>
-                <Route path="/presence">
-                    <PresenceList members={members} setMembers={setMembers} chamber={chamber}/>
+                <Route path="presence" element={
+                    <PresenceList members={members} setMembers={setMembers} chamber={chamber}/>}>
                 </Route>
-                <Route>
-                    <Navbar chamber={chamber} setChamber={setChamber} />
-                    <BodyColumns members={members} />
+                <Route path="body/*" element={
+                     <BodyColumns members={members} chamber={chamber} setChamber={setChamber}/>
+                }>
                 </Route>
-            </Switch>
+            </Routes>
         </Router>
     )
 }

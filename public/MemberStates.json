@@ -1,109 +1,112 @@
-{"memberStates":[{
-    "id":1,
-    "country":"Austria"
-},
 {
-    "id":2,
-    "country":"Belgium"
-},
-{
-    "id":3,
-    "country":"Bulgaria"
-},
-{
-    "id":4,
-    "country":"Croatia"
-},
-{
-    "id":5,
-    "country":"Cyprus"
-},
-{
-    "id":6,
-    "country":"Czechia"
-},
-{
-    "id":7,
-    "country":"Denmark"
-},
-{
-    "id":8,
-    "country":"Estonia"
-},
-{
-    "id":9,
-    "country":"Finland"
-},
-{
-    "id":10,
-    "country":"France"
-},
-{
-    "id":11,
-    "country":"Germany"
-},
-{
-    "id":12,
-    "country":"Greece"
-},
-{
-    "id":13,
-    "country":"Hungary"
-},
-{
-    "id":14,
-    "country":"Ireland"
-},
-{
-    "id":15,
-    "country":"Italy"
-},
-{
-    "id":16,
-    "country":"Latvia"
-},
-{
-    "id":17,
-    "country":"Lithuania"
-},
-{
-    "id":18,
-    "country":"Luxembourg"
-},
-{
-    "id":19,
-    "country":"Malta"
-},
-{
-    "id":20,
-    "country":"Netherlands"
-},
-{
-    "id":21,
-    "country":"Poland"
-},
-{
-    "id":22,
-    "country":"Portugal"
-},
-{
-    "id":23,
-    "country":"Romania"
-},
-{
-    "id":24,
-    "country":"Slovakia"
-},
-{
-    "id":25,
-    "country":"Slovenia"
-},
-{
-    "id":26,
-    "country":"Spain"
-},
-{
-    "id":27,
-    "country":"Sweden"
-}]
+    "memberStates": [
+        {
+            "id": 1,
+            "country": "Austria"
+        },
+        {
+            "id": 2,
+            "country": "Belgium"
+        },
+        {
+            "id": 3,
+            "country": "Bulgaria"
+        },
+        {
+            "id": 4,
+            "country": "Croatia"
+        },
+        {
+            "id": 5,
+            "country": "Cyprus"
+        },
+        {
+            "id": 6,
+            "country": "Czechia"
+        },
+        {
+            "id": 7,
+            "country": "Denmark"
+        },
+        {
+            "id": 8,
+            "country": "Estonia"
+        },
+        {
+            "id": 9,
+            "country": "Finland"
+        },
+        {
+            "id": 10,
+            "country": "France"
+        },
+        {
+            "id": 11,
+            "country": "Germany"
+        },
+        {
+            "id": 12,
+            "country": "Greece"
+        },
+        {
+            "id": 13,
+            "country": "Hungary"
+        },
+        {
+            "id": 14,
+            "country": "Ireland"
+        },
+        {
+            "id": 15,
+            "country": "Italy"
+        },
+        {
+            "id": 16,
+            "country": "Latvia"
+        },
+        {
+            "id": 17,
+            "country": "Lithuania"
+        },
+        {
+            "id": 18,
+            "country": "Luxembourg"
+        },
+        {
+            "id": 19,
+            "country": "Malta"
+        },
+        {
+            "id": 20,
+            "country": "Netherlands"
+        },
+        {
+            "id": 21,
+            "country": "Poland"
+        },
+        {
+            "id": 22,
+            "country": "Portugal"
+        },
+        {
+            "id": 23,
+            "country": "Romania"
+        },
+        {
+            "id": 24,
+            "country": "Slovakia"
+        },
+        {
+            "id": 25,
+            "country": "Slovenia"
+        },
+        {
+            "id": 26,
+            "country": "Spain"
+        },
+        {
+            "id": 27,
+            "country": "Sweden"
+        }
+    ]
 }
