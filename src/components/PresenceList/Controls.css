@@ -1,0 +1,8 @@
+#Controls{
+    padding: 2rem;
+}
+
+#Controls button{
+    width: 100%;
+    height: 3rem;
+}

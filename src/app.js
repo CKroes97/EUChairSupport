@@ -1,8 +1,8 @@
 import BodyColumns from './components/BodyColumns'
 import ChamberSelector from './components/ChamberSelector'
 import PresenceList from './components/PresenceList'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 
 
 const App = () => {

@@ -3,7 +3,6 @@ import FactionPicker from './PresenceList/FactionPicker'
 import PickedList from './PresenceList/PickedList'
 import Controls from './PresenceList/Controls'
 import { useState, useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid';
 import './PresenceList.css'
 
 const PresenceList = ({ members, setMembers, chamber }) => {
@@ -25,7 +24,7 @@ const PresenceList = ({ members, setMembers, chamber }) => {
     useEffect(() => {
         getCountries()
     }, [])
-    getCountries()
+
 
 
     const renderFactionPicker = () => {
@@ -36,8 +35,7 @@ const PresenceList = ({ members, setMembers, chamber }) => {
         }
     }
 
-    const addMember = (newMember) => {
-        var array = [...members, newMember]
+    const sortArray = (array) => {
         array = array.sort((a, b) => {
             var nameA = a.name.toUpperCase(); // ignore upper and lowercase
             var nameB = b.name.toUpperCase(); // ignore upper and lowercase
@@ -52,8 +50,19 @@ const PresenceList = ({ members, setMembers, chamber }) => {
             return 0;
         }
         )
+        return (array)
+    }
+
+    const addMember = (newMember) => {
+        var array = [...members, newMember]
+        sortArray(array)
         setMembers(array)
     }
+
+    const removeMember = () => {
+        setMembers(members.filter((entry) => entry.name !== selectedMember))
+    }
+
 
     //Add all countries
     const addAllCountries = () => {
@@ -66,10 +75,10 @@ const PresenceList = ({ members, setMembers, chamber }) => {
             <div className="columns">
                 {renderFactionPicker()}
                 <div className="column">
-                    <CountryPicker setSelected={setSelectedCountry} />
+                    <CountryPicker setSelected={setSelectedCountry} countries={countries} />
                 </div>
                 <div className="column is-one-fifth">
-                    <Controls addMember={addMember} selectedFaction={selectedFaction} selectedCountry={selectedCountry} chamber={chamber} addAllCountries={addAllCountries} />
+                    <Controls addMember={addMember} removeMember={removeMember} selectedMember={selectedMember} selectedFaction={selectedFaction} selectedCountry={selectedCountry} chamber={chamber} addAllCountries={addAllCountries} />
                 </div>
                 <div className="column">
                     <PickedList members={members} setSelectedMember={setSelectedMember} />
