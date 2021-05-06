@@ -66,11 +66,9 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
         return (
             <div className="columns">
                 <div className="column is-one-fifth">
-                    <div>
                         <p>Speakers</p>
                         <SpeakerSelector addSpeaker={addSpeaker} members={members} />
                         <SpeakerList speakers={speakers} fastForward={fastForward} setIsRunning={setIsRunning} />
-                    </div>
                 </div>
                 <div className="column">
                     <Timer passedKey={speakerResetCounter} time={speakerTime} isRunning={isRunning} />
@@ -81,7 +79,6 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
                     <ButtonList setIsRunning={setIsRunning} resetTimers={resetTimers} nextSpeaker={nextSpeaker} />
                 </div>
             </div>
-
         )
     }
 
@@ -89,10 +86,8 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
         return (
             <div className="columns">
                 <div className="column is-one-fifth">
-                    <div>
-                        <p>Speakers</p>
-                        <FullList members={members} setIsRunning={setIsRunning} setActiveSpeaker={setActiveSpeaker} resetSpeaker={resetSpeaker}></FullList>
-                    </div>
+                    <p>Speakers</p>
+                    <FullList members={members} setIsRunning={setIsRunning} setActiveSpeaker={setActiveSpeaker} resetSpeaker={resetSpeaker}></FullList>
                 </div>
                 <div className="column is-one-third">
                     <Timer passedKey={totalResetCounter} time={totalTime} isRunning={isRunning} />
@@ -107,7 +102,6 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
                     <ButtonList setIsRunning={setIsRunning} resetTimers={resetTimers} nextSpeaker={nextSpeaker} />
                 </div>
             </div>
-
         )
     }
 
@@ -129,15 +123,13 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
                     <ButtonList setIsRunning={setIsRunning} resetTimers={resetTimers} nextSpeaker={nextSpeaker} />
                 </div>
             </div>
-
         )
     }
 
     const RenderID = () => {
         return (
             <div className="columns">
-                <div className="column is-one-fifth">
-                </div>
+                <div className="column is-one-fifth" />             
                 <div className="column">
                     <Timer passedKey={speakerResetCounter} time={speakerTime} isRunning={isRunning} />
                 </div>
@@ -159,8 +151,8 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
                     <Route path="/cte" element={<RenderCTE />} />
                     <Route path="/os" element={<RenderOS />} />
                     <Route path="/id" element={<RenderID />} />
-                </Routes>           
-            <h1>{activeSpeaker}</h1>
+                </Routes>
+                <h1>{activeSpeaker}</h1>
             </div>
         </section >
 
