@@ -1,6 +1,5 @@
 import AvailableSpeaker from './AvailableSpeaker'
 import './SpeakerSelector.css'
-import { useState, useEffect } from 'react'
 import { FaAngleDown } from "react-icons/fa";
 
 
@@ -17,7 +16,7 @@ const SpeakerSelector = ({addSpeaker, members}) => {
                     </button>
                     <div className="dropdown-menu" id="dropdown-menu" role="menu">
                         <div className="dropdown-content">
-                            {members.map((member) => (<AvailableSpeaker key={member.id} member={member} addSpeaker={addSpeaker}/>))}
+                            {members.map((member) => (<AvailableSpeaker key={member.id} anchor={member.id+member.name} member={member} addSpeaker={addSpeaker}/>))}
                         </div>
                     </div>
                 </div>

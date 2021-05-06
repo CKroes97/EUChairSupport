@@ -66,7 +66,7 @@ const PresenceList = ({ members, setMembers, chamber }) => {
 
     //Add all countries
     const addAllCountries = () => {
-        countries.map((country) => { country.name = country.country })
+        countries.map((country) =>  country.name = country.country )
         setMembers(countries)
     }
 

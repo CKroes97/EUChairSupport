@@ -1,6 +1,5 @@
 import React, { useRef, useState, Component } from "react"
-import { CountdownCircleTimer } from 'react-countdown-circle-timer'
-import reactDom from "react-dom";
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './Timer.css'
 
 export class Timer extends Component {

@@ -10,10 +10,11 @@ import Navbar from './BodyColumns/Navbar'
 import { useState, React } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-{/*doc contains a lot of duplicated code, needs to be fixed */ }
-{/* should also be split over multiple files */}
+
 
 const BodyColumns = ({ members, chamber, setChamber }) => {
+    /*doc contains a lot of duplicated code, needs to be fixed */ 
+    /* should also be split over multiple files */
 
     //Initialise speakers list
     const [speakers, setSpeakers] = useState([])
