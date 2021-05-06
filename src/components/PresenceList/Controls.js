@@ -2,10 +2,19 @@ import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom'
 
-const Controls = ({ addMember, selectedFaction, selectedCountry }) => {
+const Controls = ({ addMember, selectedFaction, selectedCountry, chamber, addAllCountries }) => {
     let navigate = useNavigate()
     const finishPicking = () => {
         navigate('/body/sl')
+    }
+
+    const renderAddAll = () =>{
+        if(chamber === "council"){
+            return(
+                <button className="button" onClick={addAllCountries}>Add all</button>
+            )
+        }
+
     }
 
     return (
@@ -16,6 +25,7 @@ const Controls = ({ addMember, selectedFaction, selectedCountry }) => {
             <button className="button" onClick={finishPicking}>
                 Done
             </button>
+            {renderAddAll()}
         </div>
     )
 }
