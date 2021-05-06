@@ -1,0 +1,36 @@
+{
+    "factions": [
+        {
+            "id": 1,
+            "faction": "ECR"
+        },
+        {
+            "id": 2,
+            "faction": "EPP"
+        },
+        {
+            "id": 3,
+            "faction": "Greens-EFA"
+        },
+        {
+            "id": 4,
+            "faction": "ID"
+        },
+        {
+            "id": 5,
+            "faction": "Non-Inscrits"
+        },
+        {
+            "id": 6,
+            "faction": "S&D"
+        },
+        {
+            "id": 7,
+            "faction": "RENEW"
+        },
+        {
+            "id": 8,
+            "faction": "GUE-NGL"
+        }
+    ]
+}

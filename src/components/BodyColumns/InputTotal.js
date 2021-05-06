@@ -9,7 +9,7 @@ const InputTotal = ({setTotalTime}) => {
     //set up update to update local states and total states    
     useEffect(() => {
         setTotalTime(parseInt(totalMinutes) * 60 + parseInt(totalSeconds))
-    }, [ totalMinutes, totalSeconds])
+    }, [ totalMinutes, totalSeconds, setTotalTime])
 
     return (
         <div id="InputFields">

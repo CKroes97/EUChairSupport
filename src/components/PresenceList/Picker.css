@@ -1,0 +1,10 @@
+.picker{
+    color: white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.picker select{
+    width: 100%;
+    font-size: 1.3rem;
+}

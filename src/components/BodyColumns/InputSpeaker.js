@@ -8,7 +8,7 @@ const InputFields = ({ setSpeakerTime }) => {
     //set up update to synchronously update local states and total states
     useEffect(() => {
         setSpeakerTime(parseInt(speakerMinutes * 60) + parseInt(speakerSeconds * 1))
-    }, [speakerMinutes, speakerSeconds])
+    }, [speakerMinutes, speakerSeconds, setSpeakerTime])
 
 
     return (
