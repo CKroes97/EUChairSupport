@@ -9,11 +9,12 @@ import Timer from './BodyColumns/Timer.js'
 import Navbar from './BodyColumns/Navbar'
 import { useState, React } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { unmountComponentAtNode } from 'react-dom';
 
 
 
 const BodyColumns = ({ members, chamber, setChamber }) => {
-    /*doc contains a lot of duplicated code, needs to be fixed */ 
+    /*doc contains a lot of duplicated code, needs to be fixed */
     /* should also be split over multiple files */
 
     //Initialise speakers list
@@ -63,18 +64,39 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
         console.log(speakerResetCounter)
     }
 
+    const renderSpeakerTimer = () => {
+        return (
+            <div className="column">
+                <Timer name="SpeakerTimer" time={speakerTime} isRunning={isRunning} />
+            </div>
+        )
+    }
+
+    const renderTotalTimer = () =>{
+        return(
+            <div className="column is-one-third" id="totalTimerNode">
+            <Timer name="TotalTimer" time={totalTime} isRunning={isRunning} />
+            </div>
+        )
+    }
+
+    const unmountTotalTimer = () => {
+       if( document.getElementById("totalTimer")){
+        unmountComponentAtNode(document.getElementById("totalTimer"))
+       }
+    }
+
     //Generate different version based on current debate mode
     const RenderSpeakerList = () => {
+        unmountTotalTimer()
         return (
             <div className="columns">
                 <div className="column is-one-fifth">
-                        <p>Speakers</p>
-                        <SpeakerSelector addSpeaker={addSpeaker} members={members} />
-                        <SpeakerList speakers={speakers} fastForward={fastForward} setIsRunning={setIsRunning} />
+                    <p>Speakers</p>
+                    <SpeakerSelector addSpeaker={addSpeaker} members={members} />
+                    <SpeakerList speakers={speakers} fastForward={fastForward} setIsRunning={setIsRunning} />
                 </div>
-                <div className="column">
-                    <Timer passedKey={speakerResetCounter} time={speakerTime} isRunning={isRunning} />
-                </div>
+                {renderSpeakerTimer()}
                 <div className="column is-small-width">
                     Control
                     <InputSpeaker setSpeakerTime={setSpeakerTime} />
@@ -91,12 +113,8 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
                     <p>Speakers</p>
                     <FullList members={members} setIsRunning={setIsRunning} setActiveSpeaker={setActiveSpeaker} resetSpeaker={resetSpeaker}></FullList>
                 </div>
-                <div className="column is-one-third">
-                    <Timer passedKey={totalResetCounter} time={totalTime} isRunning={isRunning} />
-                </div>
-                <div className="column">
-                    <Timer passedKey={speakerResetCounter} time={speakerTime} isRunning={isRunning} />
-                </div>
+                {renderTotalTimer()}
+                {renderSpeakerTimer()}
                 <div className="column is-small-width">
                     Control
                         <InputTotal setTotalTime={setTotalTime} />
@@ -108,6 +126,7 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
     }
 
     const RenderOS = () => {
+        unmountTotalTimer()
         return (
             <div className="columns">
                 <div className="column is-one-fifth">
@@ -116,9 +135,7 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
                         <FullList members={members} setIsRunning={setIsRunning} setActiveSpeaker={setActiveSpeaker} resetSpeaker={resetSpeaker}></FullList>
                     </div>
                 </div>
-                <div className="column">
-                    <Timer passedKey={speakerResetCounter} time={speakerTime} isRunning={isRunning} />
-                </div>
+                {renderSpeakerTimer()}
                 <div className="column is-small-width">
                     Control
                         <InputSpeaker setSpeakerTime={setSpeakerTime} />
@@ -129,12 +146,11 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
     }
 
     const RenderID = () => {
+        unmountTotalTimer()
         return (
             <div className="columns">
-                <div className="column is-one-fifth" />             
-                <div className="column">
-                    <Timer passedKey={speakerResetCounter} time={speakerTime} isRunning={isRunning} />
-                </div>
+                <div className="column is-one-fifth" />
+                {renderSpeakerTimer()}
                 <div className="column is-small-width">
                     Control
                         <InputSpeaker setSpeakerTime={setSpeakerTime} />
