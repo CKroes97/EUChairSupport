@@ -9,7 +9,6 @@ import Timer from './BodyColumns/Timer.js'
 import Navbar from './BodyColumns/Navbar'
 import { useState, React } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { unmountComponentAtNode } from 'react-dom';
 
 
 
@@ -49,46 +48,34 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
     const [speakerTime, setSpeakerTime] = useState(20)
     const [totalTime, setTotalTime] = useState(40)
     //initialise isrunning tag
-    const [isRunning, setIsRunning] = useState(false)
-    // to reset the sucky timers pass a new passedKey
-    const [speakerResetCounter, setSpeakerResetCounter] = useState(1)
-    const [totalResetCounter, setTotalResetCounter] = useState(1)
+    const [isRunning, setIsRunning] = useState(true)
 
-    //reset functions pass new passedKeys, see docs in ReadME for why
+    //OLD: reset functions pass new passedKeys, see docs in ReadME for why
     const resetTimers = () => {
-        setSpeakerResetCounter(speakerResetCounter + 1)
-        setTotalResetCounter(totalResetCounter + 1)
+
     }
     const resetSpeaker = () => {
-        setSpeakerResetCounter(speakerResetCounter + 1)
-        console.log(speakerResetCounter)
+
     }
 
     const renderSpeakerTimer = () => {
         return (
             <div className="column">
-                <Timer name="SpeakerTimer" time={speakerTime} isRunning={isRunning} />
+                <Timer name="SpeakerTimer" timings={speakerTime} isRunning={isRunning} />
             </div>
         )
     }
 
-    const renderTotalTimer = () =>{
-        return(
+    const renderTotalTimer = () => {
+        return (
             <div className="column is-one-third" id="totalTimerNode">
-            <Timer name="TotalTimer" time={totalTime} isRunning={isRunning} />
+                <Timer name="TotalTimer" timings={totalTime} isRunning={isRunning} />
             </div>
         )
-    }
-
-    const unmountTotalTimer = () => {
-       if( document.getElementById("totalTimer")){
-        unmountComponentAtNode(document.getElementById("totalTimer"))
-       }
     }
 
     //Generate different version based on current debate mode
     const RenderSpeakerList = () => {
-        unmountTotalTimer()
         return (
             <div className="columns">
                 <div className="column is-one-fifth">
@@ -126,7 +113,6 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
     }
 
     const RenderOS = () => {
-        unmountTotalTimer()
         return (
             <div className="columns">
                 <div className="column is-one-fifth">
@@ -146,7 +132,6 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
     }
 
     const RenderID = () => {
-        unmountTotalTimer()
         return (
             <div className="columns">
                 <div className="column is-one-fifth" />

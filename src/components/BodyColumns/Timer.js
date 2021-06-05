@@ -8,13 +8,10 @@ export class Timer extends Component {
         super(props);
         this.state = {
             width: 800,
-            isOn: false,
             fullDashArray: 283,
-            timeLimit: this.props.time,
-            timePassed: 0,
-            timeLeft: this.props.time,
+            timeLimit: this.props.timings,
             name: this.props.name,
-            timerInterval: 0
+            timerInterval: 0,
         }
         //Bind methods
         this.startTimer = this.startTimer.bind(this)
@@ -37,8 +34,13 @@ export class Timer extends Component {
     */
     componentDidMount() {
         this.updateDimensions()
+        this.label = (this.state.name) + '-timer-label'
         window.addEventListener("resize", this.updateDimensions.bind(this))
+        // document.getElementById(this.label).innerHTML = this.formatTime(
+        // )
+        // console.log(this.state.timeLimit)
     }
+
 
     /**
      * Remove event listener
@@ -51,14 +53,13 @@ export class Timer extends Component {
 
 
     //Add timer methods
-    formatTime(timeToFormat) {
-        const minutes = Math.floor(timeToFormat / 60);
-        let seconds = timeToFormat % 60;
+    formatTime(timingToFormat) {
+        let minutes = Math.floor(timingToFormat / 60);
+        let seconds = timingToFormat % 60;
 
         if (seconds < 10) {
             seconds = '0' + seconds.toString();
         }
-
         return minutes + ':' + seconds.toString();
     }
 
@@ -82,27 +83,33 @@ export class Timer extends Component {
 
 
     startTimer() {
-        this.setState({
-            isOn: true
-        })
-        this.label = (this.state.name) + '-timer-label'
-        this.timerInterval = setInterval(() => {
-            this.setState(() => ({
-                timeLeft: this.state.timeLeft - 1,
-                timerInterval: this.timerInterval
-            }))
-            console.log(this.state.timeLeft)
-            if (document.getElementById(this.label)) {
-                document.getElementById(this.label).innerHTML = this.formatTime(
-                    this.state.timeLeft
-                );
-            }
-            this.setCircleDasharray();
+        console.log(this.props.isRunning)
+            let timePassed = 0
+            this.timerInterval = setInterval(() => {
+                if (this.props.isRunning === true) {
+                timePassed = timePassed + 1
+                this.setState(() => ({
+                    timeLeft: this.state.timeLimit - timePassed,
+                    timerInterval: this.timerInterval
+                }))}
+            }, 1000);
+        }
+    
 
-            if (this.state.timeLeft === 0) {
-                clearInterval(this.timerInterval)
-            }
-        }, 1000);
+    componentDidUpdate() {
+        this.label = (this.state.name) + '-timer-label'
+        if (document.getElementById(this.label) && this.state.timeLeft) {
+            document.getElementById(this.label).innerHTML = this.formatTime(
+                this.state.timeLeft
+            );
+        } else if ((document.getElementById(this.label) && this.state.timeLimit)) {
+            document.getElementById(this.label).innerHTML = this.formatTime(
+                this.state.timeLimit)
+        }
+        this.setCircleDasharray();
+        if (this.state.timeLeft === 0) {
+            clearInterval(this.timerInterval)
+        }
     }
 
     render() {
@@ -116,7 +123,7 @@ export class Timer extends Component {
                             <circle className={this.state.name + "-timer__path-elapsed base-timer__path-elapsed"} cx="50" cy="50" r="45"></circle>
                             <path
                                 id={this.state.name + "-timer-path-remaining"}
-                                stroke-dasharray="283"
+                                strokeDasharray="283"
                                 className={this.state.name + "-timer__path-remaining base-timer__path-remaining"}
                                 d="
           M 50, 50
