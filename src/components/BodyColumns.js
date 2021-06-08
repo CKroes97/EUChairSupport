@@ -48,20 +48,22 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
     const [speakerTime, setSpeakerTime] = useState(20)
     const [totalTime, setTotalTime] = useState(40)
     //initialise isrunning tag
-    const [isRunning, setIsRunning] = useState(true)
+    const [isRunning, setIsRunning] = useState(false)
+    const [totalShouldReset, setTotalShouldReset] = useState(false)
+    const [speakerShouldReset, setSpeakerShouldReset] = useState(false)
 
-    //OLD: reset functions pass new passedKeys, see docs in ReadME for why
     const resetTimers = () => {
-
+        setTotalShouldReset(true)
+        setSpeakerShouldReset(true)
     }
     const resetSpeaker = () => {
-
+        setSpeakerShouldReset(true)
     }
 
     const renderSpeakerTimer = () => {
         return (
             <div className="column">
-                <Timer name="SpeakerTimer" timings={speakerTime} isRunning={isRunning} />
+                <Timer name="SpeakerTimer" seconds={speakerTime} isRunning={isRunning} shouldReset={speakerShouldReset} setReset={setSpeakerShouldReset} />
             </div>
         )
     }
@@ -69,7 +71,7 @@ const BodyColumns = ({ members, chamber, setChamber }) => {
     const renderTotalTimer = () => {
         return (
             <div className="column is-one-third" id="totalTimerNode">
-                <Timer name="TotalTimer" timings={totalTime} isRunning={isRunning} />
+                <Timer name="TotalTimer" seconds={totalTime} isRunning={isRunning} shouldReset={totalShouldReset} setReset={setTotalShouldReset} />
             </div>
         )
     }
