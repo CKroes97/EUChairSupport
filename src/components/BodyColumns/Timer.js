@@ -12,14 +12,12 @@ export class Timer extends Component {
         super(props);
         this.state = {
             width: 800,
-            seconds: 20
+            seconds: 20,
+            started: this.props.isRunning,
+            paused: false
         }
         this.name = this.props.name
         this.fullDashArray = 283
-        this.internalState = 0 //  0 = idle, 1 = running, 2 = paused
-        this.remaining = 0
-        this.startTime = 0
-        this.timer = 0
         //Bind methods
         this.startTimer = this.startTimer.bind(this)
         this.pauseTimer = this.pauseTimer.bind(this)
@@ -28,7 +26,6 @@ export class Timer extends Component {
         this.resetTimer = this.resetTimer.bind(this)
         this.tick = this.tick.bind(this)
         this.onTick = this.tick.bind(this)
-        this.formatTime = this.formatTime.bind(this)
         this.setCircleDasharray = this.setCircleDasharray.bind(this)
         this.calculateTimeFraction = this.calculateTimeFraction.bind(this)
         console.log(this.props)
@@ -42,7 +39,6 @@ export class Timer extends Component {
     }
 
     componentWillUnmount() {
-        this.stopTimer()
         window.removeEventListener("resize", this.updateDimensions.bind(this))
     }
 
@@ -56,20 +52,17 @@ export class Timer extends Component {
 
     componentDidUpdate() {
         const { isRunning, shouldReset } = this.props
+        console.log(this.state)
         if (shouldReset === true) {
             this.stopTimer()
             this.props.setReset(false)
         }
         else if (shouldReset === false) {
-            if (this.internalState === 0) {
-                this.resetTimer();
-                this.startTimer();
-            }
-            else if (isRunning === false) {
+            if (isRunning === false) {
                 this.pauseTimer()
             }
             else if (isRunning === true) {
-                this.resumeTimer()
+                this.startTimer()
             }
         }
     }
@@ -83,27 +76,17 @@ export class Timer extends Component {
 
     //Add timer methods
     startTimer() {
-        this.startTime = new Date();
-        // if (this.timer === 0) {
-        //     this.timer = setInterval(this.tick, 1000)
-        //     console.log("interval triggered")
-        // }
-        this.internalState = 1;
+        this.setState({started: true, paused:false})
+        console.log("startTimer")
+        console.log(this.state)
     }
 
     stopTimer() {
-        if (this.timer) {
-            clearInterval(this.timer);
-        }
-        this.timer = 0;
-        this.internalState = 0;
+        this.setState({started: false, paused: false})
     }
 
     pauseTimer() {
-        if (this.internalState !== 1) return;
-        this.remaining = (1000 - (new Date() - this.startTime)) / 1000;
-        clearInterval(this.timer);
-        this.internalState = 2;
+        this.setState({started: true, paused: true})
     }
 
     resumeTimer() {
@@ -120,11 +103,11 @@ export class Timer extends Component {
     }
 
 
-    tick() {
+    tick(time) {
         //Set state so a re-render happens.
         const { seconds } = this.state;
 
-        const sRemaining = seconds - 1;
+        const sRemaining = time;
         this.setState({
             seconds: sRemaining
         });
@@ -166,7 +149,7 @@ export class Timer extends Component {
     }
 
 
-    onTick() {
+    onTick(time) {
         if (document.getElementById(this.label) && this.remaining) {
             document.getElementById(this.label).innerHTML = this.formatTime(
                 this.remaining
@@ -182,26 +165,21 @@ export class Timer extends Component {
 
     render() {
         let width = this.state.width
+        const {started, paused, seconds} = this.state
         return (
             <div id={this.name}>
                 <span>
                 <TimerMachine
-            timeStart={60 * 1000}
-            started={true}
-            paused={false}
+            timeStart={seconds * 1000}
+            started= {started}
+            paused={paused}
             countdown={true}
             interval={1000}
             formatTimer={(time, ms) =>
               moment.duration(ms, "milliseconds").format("h:mm:ss")
             }
-            onStart={time =>
-              console.info(`Timer started: ${JSON.stringify(time)}`)
-            }
-            onStop={time =>
-              console.info(`Timer stopped: ${JSON.stringify(time)}`)
-            }
             onTick={time =>
-              console.info(`Timer ticked: ${JSON.stringify(time)}`)
+              console.info(`time: ${JSON.stringify(time)}`)
             }
             onPause={time =>
               console.info(`Timer paused: ${JSON.stringify(time)}`)
